@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding ion-text-center">
+
+  <!-- *********SEGMENTS*********************** -->
+  <ion-segment [(ngModel)]="segment" value="pizza" mode="ios">
+
+    <ion-segment-button value="scan">
+      <ion-label>Scan Qr</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="generate">
+      <ion-label>Generate Qr</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+
+
+  <!-- ************Scan QR************** -->
+  <div *ngIf="segment === 'scan'">
+    if segment is equal to scan
+  </div>
+
+  <!-- ********Generate QR*************** -->
+  <div *ngIf="segment === 'generate'">
+    <div class="segment-content">
+
+      <div id="qrImage">
+        <div class="d-flex-center">
+          <div class="d-flex-center qr-wrapper">
+            <qr-code *ngIf="qrText" [value]="qrText" size="190" errorCorrectionLevel="M" />
+            <img *ngIf="!qrText" class="qr-placeholder" src="../../assets/images/qr.webp" alt="">
+          </div>
+
+        </div>
+          <div class="ion-padding-top">
+              {{qrText}}
+          </div>
+      </div>
+      <ion-item class="item">
+        <ion-textarea label="Write somenthing to convert to QR Code " labelPlacement="floating" fill="outline" placeholder="Enter text" [(ngModel)]="qrText" rows="2" [autoGrow]="true"></ion-textarea>
+      </ion-item>
+
+      <!-- ******* Share QR************ -->
+
+      <ion-button (click)="captureScreen()" *ngIf="qrText" class="submit ion-margin-top" expand="block">
+        Share
+        <ion-icon slot="end" name="share-social-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
+</ion-content>
