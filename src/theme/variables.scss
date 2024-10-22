@@ -16,7 +16,7 @@ body.barcode-scanning-active{
     visibility: visible
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
     .barcode-scanning-active{
         visibility: hidden;
         --background: transparent;

@@ -9,6 +9,7 @@ import { ScanPageRoutingModule } from './scan-routing.module';
 import { ScanPage } from './scan.page';
 import { QrCodeModule } from 'ng-qrcode';
 import { BarcodeScanningModalComponent } from './barcode-scanning-modal.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { BarcodeScanningModalComponent } from './barcode-scanning-modal.componen
     FormsModule,
     IonicModule,
     ScanPageRoutingModule,
-    QrCodeModule
+    QrCodeModule,
+    MatProgressBarModule
   ],
   declarations: [ScanPage, BarcodeScanningModalComponent]
 })

@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { RegistroPageRoutingModule } from './registro-routing.module';
 
 import { RegistroPage } from './registro.page';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { RegistroPage } from './registro.page';
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    RegistroPageRoutingModule
+    RegistroPageRoutingModule,
+    MatProgressBarModule
   ],
   declarations: [RegistroPage]
 })
