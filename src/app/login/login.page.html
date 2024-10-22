@@ -5,20 +5,49 @@
 </ion-header>
 
 <ion-content>
-  <form (ngSubmit)="onLogin()">
-    <ion-item>
-      <ion-label position="floating">Nombre de Usuario</ion-label>
-      <ion-input [(ngModel)]="username" name="username" type="text" required></ion-input>
-    </ion-item>
+  <div class="center-container">
+    <ion-icon class="shield-icon" color="tertiary" name="shield-outline"></ion-icon>
+    <ion-text color="primary">
+        <h1><strong>Admin</strong>App</h1>
+    </ion-text>
+</div>
+  <ion-card>
+    
+    <ion-card-header>
+      <ion-card-title>Login</ion-card-title>
+    </ion-card-header>
+  <ion-card-content>
+    <form [formGroup]="formularioLogin">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input formControlName="contraseña" type="password"></ion-input>
+      </ion-item>
+    </form>
+    <br>
+    <ion-button (click)="ingresar()" color="tertiary" mode="ios" expand="block"  shape="round">
+      Ingresar
+      <ion-icon slot="end" name="log-in-outline"></ion-icon>
+    </ion-button>
+    <ion-button  color="primary" mode="ios" expand="block"  shape="round" routerLink="/forgot-password">
+      ¿Olvido su contraseña?
+      <ion-icon slot="end" name="log-in-outline"></ion-icon>
+    </ion-button>
+  </ion-card-content>
+</ion-card>
 
-    <ion-item>
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input [(ngModel)]="password" name="password" type="password" required></ion-input>
-    </ion-item>
-
-    <ion-button expand="full" type="submit" color="tertiary">Ingresar</ion-button>
-    <ion-button expand="full" fill="outline" (click)="goToForgotPassword()">¿Olvidaste tu contraseña?</ion-button>
-
-    <ion-text color="danger" *ngIf="errorMessage">{{ errorMessage }}</ion-text>
-  </form>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="tertiary">
+   <ion-buttons  slot="end">
+    <ion-button  mode="ios" [routerLink]="['/registro']"  >
+      Registrarse
+      <ion-icon slot="end" name="person-add-outline"></ion-icon>
+    </ion-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

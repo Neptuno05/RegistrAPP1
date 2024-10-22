@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -8,7 +9,7 @@ export class AuthService {
   private isAuthenticated = false;
   private currentUser: string | null = null;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,private afAuth: AngularFireAuth) {}
 
   login(username: string, password: string): boolean {
     // Simulación de autenticación (puedes extender esto con lógica real)

@@ -1,3 +1,25 @@
+.text {
+  text-align: center;
+  font-size: 2.5rem; /* Ajusta el tamaño según sea necesario */
+  font-weight: bold; /* Para mantener el texto en negrita */
+  display: block;
+  margin-top: 20px; /* Ajusta este valor si necesitas más separación arriba */
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.shield-icon {
+  font-size: 400px; /* Tamaño del ícono */
+  margin-top: none; /* Elimina cualquier margen superior */
+  align-self: auto; /* Asegura que el ícono esté centrado */
+  margin-bottom: 125px;
+}
+
+
+
 #container {
   text-align: center;
 
@@ -25,3 +47,6 @@
 #container a {
   text-decoration: none;
 }
+
+
+
