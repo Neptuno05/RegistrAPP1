@@ -14,12 +14,12 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
-    // canActivate: [authGuard] // Protegemos la página de inicio
+
   },
   {
     path: 'scan',
     loadChildren: () => import('./scan/scan.module').then(m => m.ScanPageModule),
-    // canActivate: [authGuard] // Protegemos la página de escaneo de QR
+
   },
   {
     path: '',
